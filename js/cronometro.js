@@ -5,7 +5,7 @@ const cronometro = setInterval(function() {
     if (tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMosquito)
-        window.location.href = '/page/vitoria.html'
+        window.location.href = '../page/vitoria.html'
     } else {
         document.getElementById('cronometro').innerHTML = tempo
     }

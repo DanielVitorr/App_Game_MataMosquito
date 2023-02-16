@@ -33,7 +33,7 @@ function posicaoRandomica() {
         if (vida >= 3) {
             window.location.href = '../page/gameOver.html'
         } else {
-            document.getElementById('v' + vida).src = '/img/coracao_vazio.png'
+            document.getElementById('v' + vida).src = '../img/coracao_vazio.png'
             vida++
         }
     }
@@ -50,14 +50,14 @@ function posicaoRandomica() {
     
     var telaMosquito = document.getElementById('telaMosquito')
     var mosquito = document.createElement('img')
-    mosquito.src = '/img/mosquito.png'
+    mosquito.src = '../img/mosquito.png'
     mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
     mosquito.style.position = 'absolute'
     mosquito.id = 'mosquito'
     mosquito.onclick = function() {
-        mosquito.src = '/img/splash-mosquito.png'
+        mosquito.src = '../img/splash-mosquito.png'
         mosquito.id = 'splash_mosquito'
         setTimeout(function() {
             const splash_mosquito = document.getElementById('splash_mosquito')
