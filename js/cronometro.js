@@ -1,12 +1,12 @@
-var tempo_segundo = 10
+let tempo = 60
 
 const cronometro = setInterval(function() {
-    tempo_segundo -= 1
-    if (tempo_segundo < 0) {
+    tempo -= 1
+    if (tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMosquito)
         window.location.href = '/page/vitoria.html'
     } else {
-        document.getElementById('cronometro_segundo').innerHTML = tempo_segundo
+        document.getElementById('cronometro').innerHTML = tempo
     }
 }, 1000)

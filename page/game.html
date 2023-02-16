@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/mosquito.js"></script>
+    <script src="/js/cronometro.js"></script>
+    <link rel="stylesheet" href="/css/game.css">
+    <link rel="icon" type="image/png" href="/img/mosquito.png"/>
+    <title>Mata Mosquito</title>
+</head>
+<body onresize="ajustarTamanhoTelaJogo()">
+    <div id="telaMosquito"></div>
+    <div class="tela_pontuacao">
+        <span id="potuacao_atual"></span>
+        <span id="potuacao_anterior"></span>
+    </div>
+    <div class="painel">
+        <div class="pontosVida">
+            <img id="v1" src="/img/coracao_cheio.png" alt="Coração Cheio">
+            <img id="v2" src="/img/coracao_cheio.png" alt="Coração Cheio">
+            <img id="v3" src="/img/coracao_cheio.png" alt="Coração Cheio">
+        </div>
+        <hr>
+        <div class="cronometro">
+            Tempo restante: 
+            <span id="cronometro"></span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cronometro').innerHTML = tempo
+        document.getElementById('potuacao_atual').innerHTML = 'Pontuação Atual: ' + ''
+        document.getElementById('potuacao_anterior').innerHTML = 'Pontuação Anterior: ' + pontos_total
+
+        var criaMosquito = setInterval(function() {
+            posicaoRandomica()
+        }, criaMosquitoTempo)
+    </script>
+</body>
+</html>
