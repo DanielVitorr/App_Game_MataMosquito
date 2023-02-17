@@ -1,7 +1,7 @@
 let altura = 0
 let largura = 0
 let vida = 1
-var pontuacao_atual = document.getElementById('pontuacao_atual')
+let pontuacao_atual = document.getElementById('pontuacao_atual')
 let nivel = window.location.search
 let criaMosquitoTempo = 1500
 
@@ -31,7 +31,7 @@ function posicaoRandomica() {
         pontuacao_atual--
 
         if (vida >= 3) {
-            window.location.href = '../page/gameOver.html'
+            window.location.href = '../../page/gameOver.html'
         } else {
             document.getElementById('v' + vida).src = '../img/coracao_vazio.png'
             vida++
@@ -42,14 +42,14 @@ function posicaoRandomica() {
     const elementoAltura = elemento.clientHeight
     const elementoLargura = elemento.clientWidth
 
-    var posicaoX = Math.floor(Math.random() * elementoLargura) - 90
-    var posicaoY = Math.floor(Math.random() * elementoAltura) - 90
+    let posicaoX = Math.floor(Math.random() * elementoLargura) - 90
+    let posicaoY = Math.floor(Math.random() * elementoAltura) - 90
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX
     posicaoY = posicaoY < 0 ? 0 : posicaoY
     
-    var telaMosquito = document.getElementById('telaMosquito')
-    var mosquito = document.createElement('img')
+    let telaMosquito = document.getElementById('telaMosquito')
+    let mosquito = document.createElement('img')
     mosquito.src = '../img/mosquito.png'
     mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     mosquito.style.left = posicaoX + 'px'
@@ -71,7 +71,7 @@ function posicaoRandomica() {
         document.getElementById('potuacao_atual').innerHTML = 'Pontuação Atual: ' + pontuacao_atual
     }
 
-    var obj = {}
+    let obj = {}
     pontos_total.push(obj)
     console.log(pontos_total)
 
@@ -80,7 +80,7 @@ function posicaoRandomica() {
 console.log(pontos_total)
 
 function tamanhoAleatorio() {
-    var classeTamanho = Math.floor(Math.random() * 3)
+    let classeTamanho = Math.floor(Math.random() * 3)
     switch(classeTamanho) {
         case 0:
             return 'mosquito1'
@@ -92,7 +92,7 @@ function tamanhoAleatorio() {
 }
 
 function ladoAleatorio() {
-    var classeLado = Math.floor(Math.random() * 2)
+    let classeLado = Math.floor(Math.random() * 2)
     switch(classeLado) {
         case 0:
             return 'ladoA'
