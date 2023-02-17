@@ -108,5 +108,5 @@ function iniciarJogo() {
         alert('Selecione um nivel para iniciar o jogo')
         return false
     }
-    window.location.href = '/page/game.html?' + nivelID
+    window.location.href = '/page/game.html' + nivelID
 }
