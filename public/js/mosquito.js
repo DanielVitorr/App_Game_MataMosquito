@@ -11,7 +11,7 @@ let pontos_total = []
 
 if (nivel === 'facil') {
     criaMosquitoTempo = 1500
-} else if (nivel === 'normal') {
+} else if (nivel === 'medio') {
     criaMosquitoTempo = 1000
 } else if (nivel === 'dificil') {
     criaMosquitoTempo = 700
@@ -33,7 +33,7 @@ function posicaoRandomica() {
         if (vida >= 3) {
             window.location.href = '../../page/gameOver.html'
         } else {
-            document.getElementById('v' + vida).src = '../img/coracao_vazio.png'
+            document.getElementById('v' + vida).src = '/public/img/coracao_vazio.png'
             vida++
         }
     }
@@ -50,14 +50,14 @@ function posicaoRandomica() {
     
     let telaMosquito = document.getElementById('telaMosquito')
     let mosquito = document.createElement('img')
-    mosquito.src = '../img/mosquito.png'
+    mosquito.src = '/public/img/mosquito.png'
     mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
     mosquito.style.position = 'absolute'
     mosquito.id = 'mosquito'
     mosquito.onclick = function() {
-        mosquito.src = '../img/splash-mosquito.png'
+        mosquito.src = '/public/img/splash-mosquito.png'
         mosquito.id = 'splash_mosquito'
         setTimeout(function() {
             const splash_mosquito = document.getElementById('splash_mosquito')
