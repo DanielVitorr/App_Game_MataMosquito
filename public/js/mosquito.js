@@ -102,11 +102,11 @@ function ladoAleatorio() {
 }
 
 function iniciarJogo() {
-    let nivel = document.getElementById("nivel").value
+    let nivelID = document.getElementById("nivel").value
 
-    if (nivel === '') {
+    if (nivelID === '') {
         alert('Selecione um nivel para iniciar o jogo')
         return false
     }
-    window.location.href = '../../page/game.html?' + nivel
+    window.location.href = '../../page/game.html?' + nivelID
 }
