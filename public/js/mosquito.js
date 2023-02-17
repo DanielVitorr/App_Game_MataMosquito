@@ -3,7 +3,7 @@ let largura = 0
 let vida = 1
 let pontuacao_atual = document.getElementById('pontuacao_atual')
 let nivel = window.location.search
-let criaMosquitoTempo = 1500
+let criaMosquitoTempo = 0
 
 nivel = nivel.replace('?', '')
 
@@ -99,4 +99,14 @@ function ladoAleatorio() {
         case 1:
             return 'ladoB'
     }
+}
+
+function iniciarJogo() {
+    let nivel = document.getElementById("nivel").value
+
+    if (nivel === '') {
+        alert('Selecione um nivel para iniciar o jogo')
+        return false
+    }
+    window.location.href = '../../page/game.html?' + nivel
 }
