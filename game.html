@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/game.css">
-    <link rel="icon" type="image/png" href="../public/img/mosquito.png"/>
+    <link rel="stylesheet" href="./game.css">
+    <link rel="icon" type="image/png" href="./img/mosquito.png"/>
+    <script src="./mosquito.js"></script>
+    <script src="./cronometro.js"></script>
     <title>Mata Mosquito</title>
 </head>
 <body onresize="ajustarTamanhoTelaJogo()">
@@ -16,9 +18,9 @@
     </div>
     <div class="painel">
         <div class="pontosVida">
-            <img id="v1" src="../public/img/coracao_cheio.png" alt="Coração Cheio">
-            <img id="v2" src="../public/img/coracao_cheio.png" alt="Coração Cheio">
-            <img id="v3" src="../public/img/coracao_cheio.png" alt="Coração Cheio">
+            <img id="v1" src="./img/coracao_cheio.png" alt="Coração Cheio">
+            <img id="v2" src="./img/coracao_cheio.png" alt="Coração Cheio">
+            <img id="v3" src="./img/coracao_cheio.png" alt="Coração Cheio">
         </div>
         <hr>
         <div class="cronometro">
@@ -36,7 +38,5 @@
             posicaoRandomica()
         }, criaMosquitoTempo)
     </script>
-    <script src="../public/js/mosquito.js"></script>
-    <script src="../public/js/cronometro.js"></script>
 </body>
 </html>

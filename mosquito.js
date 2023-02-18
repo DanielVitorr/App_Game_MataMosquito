@@ -1,13 +1,13 @@
-let altura = 0
-let largura = 0
-let vida = 1
-let pontuacao_atual = document.getElementById('pontuacao_atual')
-let nivel = window.location.search
-let criaMosquitoTempo = 0
+var altura = 0
+var largura = 0
+var vida = 1
+var pontuacao_atual = document.getElementById('pontuacao_atual')
+var nivel = window.location.search
+var criaMosquitoTempo = 10
 
 nivel = nivel.replace('?', '')
 
-let pontos_total = []
+var pontos_total = []
 
 if (nivel === 'facil') {
     criaMosquitoTempo = 1500
@@ -25,15 +25,15 @@ ajustarTamanhoTelaJogo()
 
 function posicaoRandomica() {
 
-    const mosquitoID = document.getElementById('mosquito')
+    let mosquitoID = document.getElementById('mosquito')
     if (mosquitoID) {
         mosquitoID.remove()
         pontuacao_atual--
 
         if (vida >= 3) {
-            window.location.href = '../../page/gameOver.html'
+            window.location.href = './gameOver.html'
         } else {
-            document.getElementById('v' + vida).src = '/public/img/coracao_vazio.png'
+            document.getElementById('v' + vida).src = './img/coracao_vazio.png'
             vida++
         }
     }
@@ -50,14 +50,14 @@ function posicaoRandomica() {
     
     let telaMosquito = document.getElementById('telaMosquito')
     let mosquito = document.createElement('img')
-    mosquito.src = '/public/img/mosquito.png'
+    mosquito.src = './img/mosquito.png'
     mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
     mosquito.style.position = 'absolute'
     mosquito.id = 'mosquito'
     mosquito.onclick = function() {
-        mosquito.src = '/public/img/splash-mosquito.png'
+        mosquito.src = './img/splash-mosquito.png'
         mosquito.id = 'splash_mosquito'
         setTimeout(function() {
             const splash_mosquito = document.getElementById('splash_mosquito')
@@ -77,7 +77,6 @@ function posicaoRandomica() {
 
     telaMosquito.appendChild(mosquito)
 }
-console.log(pontos_total)
 
 function tamanhoAleatorio() {
     let classeTamanho = Math.floor(Math.random() * 3)
@@ -102,11 +101,11 @@ function ladoAleatorio() {
 }
 
 function iniciarJogo() {
-    let nivelID = document.getElementById("nivel").value
+    let nivel = document.getElementById("nivel").value
 
-    if (nivelID === '') {
+    if (nivel === '') {
         alert('Selecione um nivel para iniciar o jogo')
         return false
     }
-    window.location.href = '/page/game.html' + nivelID
+    window.location.href = './game.html?' + nivel
 }
